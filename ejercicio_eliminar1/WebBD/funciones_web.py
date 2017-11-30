@@ -23,7 +23,7 @@ def insertar_registro(l: float) -> None:
     conexion.close()
 
 
-def delete_registros(id: float) -> None:
+def delete_registros(id: int) -> None:
     """ delete part by part id """
     conn = None
     try:
@@ -76,7 +76,7 @@ def execute() -> 'html':
 
 @app.route('/delete_data', methods=['POST'])
 def delete() -> 'html':
-    id = float((request.form['id']))
+    id = int((request.form['id']))
 
     title = 'This is the equation\'s result'
     delete_registros(id)
