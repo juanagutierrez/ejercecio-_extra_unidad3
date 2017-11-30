@@ -1,0 +1,20 @@
+
+{% extends 'base.html'%}
+{% block body%}
+    <h2>{{the_title}}</h2>
+    <p>The values in the equation:</p>
+    <table>
+        <tr>
+            <td>L:</td>
+            <td>{{the_l}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">A=(l*l)*sqrt(3)</td>
+        </tr>
+        <tr>
+            <td>A:</td>
+            <td>{{the_result}}</td>
+        </tr>
+    </table>
+    <p><a href="/entry">Go back</a></p>
+{% endblock%}

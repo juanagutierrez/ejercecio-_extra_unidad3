@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+<table>
+ <tr>
+ {% if the_data %}
+ {% for the_row_title in the_row_titles %}
+ <th>{{the_row_title}}</th>
+ {% endfor %}
+ </tr>
+ {% for fila in the_data %}
+ <tr>
+ {% for f in fila %}
+    <td>{{f}}</td>
+ {% endfor %}
+ </tr>
+ {% endfor %}
+     {% else %}
+<h3>Vacio</h3>
+{% endif %}
+
+</table>
+    <form method="post" action="/delete_data">
+     <input type="TEXT" name="id" />
+     <p><input type="submit" value="Borrar" /></p>
+    </form>
+    <p><a href="/entry">Regresar</a></p>
+
+{% endblock %}
